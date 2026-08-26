@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '21'
+          java-version: '17'
 
       - name: Setup Android SDK & Capacitor
         run: |
@@ -37,11 +37,17 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Fix Kotlin Duplicate Classes
+        run: |
+          echo "android.enableJetifier=true" >> android/gradle.properties
+          echo "android.useAndroidX=true" >> android/gradle.properties
+          echo "kotlin.stdlib.default.dependency=false" >> android/gradle.properties
+
       - name: Build APK with Gradle
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
