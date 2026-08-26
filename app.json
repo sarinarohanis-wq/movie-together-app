@@ -1,0 +1,57 @@
+{
+  "name": "Movie Together",
+  "displayName": "Movie Together",
+  "version": "1.0.0",
+  "description": "Ultra-low latency peer-to-peer video streaming application between Android devices using WebRTC and Jetpack Compose.",
+  "main": "src/main.tsx",
+  "android": {
+    "package": "com.movietogether.stream",
+    "versionCode": 1,
+    "versionName": "1.0.0",
+    "minSdkVersion": 24,
+    "targetSdkVersion": 34,
+    "compileSdkVersion": 34,
+    "buildToolsVersion": "34.0.0",
+    "applicationId": "com.movietogether.stream",
+    "permissions": [
+      "android.permission.INTERNET",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.ACCESS_WIFI_STATE",
+      "android.permission.CHANGE_WIFI_MULTICAST_STATE",
+      "android.permission.CAMERA",
+      "android.permission.RECORD_AUDIO",
+      "android.permission.MODIFY_AUDIO_SETTINGS",
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.READ_MEDIA_VIDEO",
+      "android.permission.READ_MEDIA_AUDIO",
+      "android.permission.WAKE_LOCK",
+      "android.permission.FOREGROUND_SERVICE"
+    ],
+    "gradle": {
+      "agpVersion": "8.4.1",
+      "kotlinVersion": "1.9.24",
+      "composeBomVersion": "2024.05.00",
+      "jvmTarget": "17"
+    }
+  },
+  "build": {
+    "entry": "src/main.tsx",
+    "outDir": "dist",
+    "sourcemap": true,
+    "target": "es2022"
+  },
+  "server": {
+    "entry": "server.ts",
+    "port": 3000,
+    "wsEndpoint": "/ws"
+  },
+  "keywords": [
+    "android",
+    "webrtc",
+    "p2p-streaming",
+    "video-sync",
+    "jetpack-compose",
+    "kotlin",
+    "realtime"
+  ]
+}

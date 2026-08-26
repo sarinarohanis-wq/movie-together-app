@@ -1,0 +1,6 @@
+{
+  "name": "Movie Together",
+  "description": "پارتی تماشای همگام و استریم کم‌تأخیر ویدئو بین گوشی‌ها با WebRTC P2P، تنظیمات جامع و اشتراک همزمان فیلم",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
